@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  // background-color: #222;
+  z-index: 100000;
+  background-color: transparent;
+  backdrop-filter: blur(3px);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .2;
+    z-index: -1;
+  }
+
+  .links__list {
+    column-gap: 32px;
+    .link {
+      color: $color__white;
+      transition: $transition;
+      font-size: $ft__16;
+      font-weight: $ft__W__M;
+      position: relative;
+      // text-transform: uppercase;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $main__red;
+        transition: $transition;
+      }
+      &.active,
+      &:hover {
+        color: $main__red;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

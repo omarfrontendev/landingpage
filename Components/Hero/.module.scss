@@ -1,0 +1,71 @@
+@import '../../styles/variables.scss';
+
+.hero__Section {
+  background-color: #222;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  .bg__image__container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0,.7);
+    }
+    .bg__IMAGE {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hero__content {
+    z-index: 10;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    .main__heading {
+      color: $color__white;
+      font-size: $ft__52;
+      font-weight: $ft__W__B;
+      line-height: 1.28;
+      margin-bottom: 24px;
+    }
+    .link__tell__how {
+      color: $color__white;
+      background-color: $main__red;
+      width: 300px;
+      max-width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: $ft__24;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-weight: $ft__W__M;
+      transition: $transition;
+      border: 2px solid $main__red;
+      pointer-events: all;
+      &:hover {
+        background-color: #000;
+        border: 2px solid $color__white;
+        color: $color__white;
+        transform: scale(1.0111);
+      }
+    }
+  }
+}

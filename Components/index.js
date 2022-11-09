@@ -1,0 +1,11 @@
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as Hero } from './Hero';
+export { default as VirtualAssistant } from './VirtualAssistant';
+export { default as OurWord } from './OurWord';
+export { default as Testimonials } from './Testimonials';
+export { default as MasterSection } from './MasterSection';
+export { default as Team } from './Team';
+export { default as ServicesSection } from './ServicesSection';
+export { default as BookSection } from './BookSection';
+export { default as ContactUs } from './ContactUs';

@@ -1,0 +1,120 @@
+@import '../../styles/variables.scss';
+
+.contact__us__content {
+  column-gap: 24px;
+  .contact__form__container,
+  .left__col {
+    flex: 1;
+  }
+  .left__col {
+    .image__container {
+      filter: opacity(.5);
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .contact__form__container {
+    .form {
+      .inputs__group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+      .message {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        .textarea {
+          all: unset;
+          padding: 10px;
+          height: 150px;
+          border: 1px solid rgba(255, 255, 255, 0.199);
+          border-radius: 4px;
+          color: $color__white;
+          width: 100%;
+          &:focus {
+            border-color: $color__white;
+          }
+        }
+      }
+      .services {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        margin-bottom: 30px;
+        .input {
+          all: unset;
+          background-color: transparent;
+          padding: 0 10px;
+          height: 50px;
+          border: 1px solid rgba(255, 255, 255, 0.199);
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $color__white;
+          width: 100%;
+          &:focus {
+            border-color: $color__white;
+          }
+        }
+      }
+      .submit__btn {
+        margin-top: 30px;
+        color: $color__white;
+        background-color: $main__red;
+        width: 150px;
+        max-width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $ft__20;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: $ft__W__M;
+        transition: $transition;
+        border: 2px solid $main__red;
+        pointer-events: all;
+        &:disabled {
+          background-color: #ddd;
+          border-color: #DDD;
+          color: #333;
+          pointer-events: none;
+          opacity: .3;
+        }
+        &:hover {
+          background-color: #000;
+          border: 2px solid $color__white;
+          color: $color__white;
+        }
+      }
+    }
+    .label {
+      color: $color__white;
+      opacity: .5;
+      margin-bottom: 4px;
+    }
+  }
+  .select__box__container {
+    width: 100%;
+    display: flex;
+    position: relative;
+    .error__message {
+      position: absolute;
+      bottom: -24px;
+      color: $main__red;
+      right: 0;
+      font-size: 14px;
+      opacity: .7;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.section {
+  padding: 150px 0;
+  background-image: url('https://leagueofva.com/wp-content/uploads/2015/05/home-testimonial-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  border-top: 3px solid $main__red;
+  border-bottom: 3px solid $main__red;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .5;
+  } 
+  .section__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    color: $color__white;
+    text-align: center;
+    .ph {
+      font-size: $ft__48;
+      margin-bottom: 48px;
+      font-weight: $ft__W__EXB;
+      & >span {
+        color: $main__red;
+      }
+    }
+    .auther {
+      font-size: 32px;
+      position: relative;
+      font-weight: $ft__W__M;
+      .icon {
+        color: $main__red;
+      }
+    }
+  }
+}

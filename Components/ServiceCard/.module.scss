@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+// .
+.service__card {
+  border-radius: 6px;
+  background-color: $color__white;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  .show__btn {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: $transition;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $main__red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color__white;
+    font-size: $ft__24;
+    &.show {
+      transform: rotate(180deg);
+    }
+  }
+  .service__img {
+    background-color: $main__red;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    column-gap: 20px;
+    // height: 100px;
+    .service__label {
+      color: $color__white;
+      font-size: $ft__24;
+    }
+    img {
+      height: 100px;
+      width: 100px;
+      object-fit: contain;
+    }
+  }
+  .service__details {
+    flex: 3;
+    padding: 20px 30px 20px 20px;
+    overflow: hidden;
+    .service__desc {
+      font-size: $ft__16;
+      font-weight: $ft__W__M;
+      line-height: 32px;
+      overflow: hidden;
+      display: -webkit-box;
+      &.show {
+        display: block;
+        overflow: hidden;
+        -webkit-box-orient: none;
+        -webkit-line-clamp: none; 
+        white-space: none;
+      }
+      &.hide {
+        animation: hidetext .3s forwards;
+        overflow: hidden;
+      }
+
+    }
+  }
+}
+@keyframes hidetext {
+  to {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    white-space: pre-wrap;
+  }
+}
