@@ -46,7 +46,7 @@ const Testimonials = () => {
     autoplay: true,
     speed: 800,
     autoplaySpeed: 4500,
-    cssEase: "cubic-bezier(1, .1, .5, 1)",
+    // cssEase: "cubic-bezier(1, .1, .5, 1)",
     className: 'feedback__slider'
   };
 

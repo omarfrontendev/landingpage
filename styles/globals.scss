@@ -90,7 +90,8 @@ ul {
     margin: 0 20px;
     transition: .5s ease-in-out;
     // transition-timing-function: cubic-bezier(1, .5, 0.0, 1);
-    transition-timing-function: cubic-bezier(1, .1, .5, 1);
+    // transition-timing-function: cubic-bezier(1, .1, .5, 1);
+    transition: .3s ease-in-out;
     filter: blur(2px);
     // opacity: .5;
     &.slick-active {

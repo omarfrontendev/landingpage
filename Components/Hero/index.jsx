@@ -53,7 +53,7 @@ const Hero = () => {
         <div className="container d-flex flex-column align-items-center justify-content-center">
             <h1 data-aos="fade-up" data-aos-duration="1300" data-aos-delay='300' className={`text-center ${styles.main__heading}`}>FOCUS ON WHAT REALLY MATTERS,<br/>LEAVE THE REST TO US.</h1>
             <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay='500'>
-              <a href='#contact__us' className={styles.link__tell__how}>Tell Me How</a>
+              <a href='#contact__us' className={styles.link__tell__how}>contact us now</a>
             </div>
         </div>
       </div>
