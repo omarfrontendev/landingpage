@@ -4,7 +4,8 @@ import ReviewCard from '../ReviewCard';
 import styles from './.module.scss'
 import Aos from 'aos';
 import "aos/dist/aos.css";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const Testimonials = () => {
 
   useEffect(() => {
