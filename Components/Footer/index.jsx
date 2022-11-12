@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className={`${styles.copyright} text-center`}>© Copyright 2020 |  All Rights Reserved|Powered by Omnia Ahmed</p>
+      <p className={`${styles.copyright} text-center`}>© Copyright 2020 |  All Rights Reserved <br/>Powered by Omar Abd Elrhman</p>
     </footer>
   )
 }

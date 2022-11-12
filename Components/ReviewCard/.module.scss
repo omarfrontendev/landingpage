@@ -70,3 +70,22 @@
     font-weight: $ft__W__M;
   }
 }
+@media(max-width: 767px) {
+  .card {
+    padding: 24px;
+    .user__details {
+      margin-bottom: 24px;
+    }
+  }
+}
+@media(max-width: 575px) {
+  .card {
+    padding-right: 20px;
+    .user__details {
+      margin-bottom: 24px;
+    }
+    .opinion {
+      font-size: $ft__16;
+    }
+  }
+}

@@ -32,7 +32,7 @@ const ServiceCard = ({ label, img, desc, i }) => {
       </div>
       <motion.div className={styles.service__details}>
         <AnimatePresence>
-          <motion.div
+          <motion.p
             // layout
             animate={{height: showAll ? 'auto' : '70px'}}
             transition={{type:'linear'}}
@@ -59,7 +59,7 @@ const ServiceCard = ({ label, img, desc, i }) => {
             }
             )}
             
-          </motion.div>
+          </motion.p>
         </AnimatePresence>
       </motion.div>
     </motion.div>
