@@ -33,7 +33,7 @@ ul {
   text-align: center;
   margin: 0 auto 40px;
   // ==========
-  font-size: $ft__48;
+  font-size: $ft__52;
   font-weight: $ft__W__B;
   letter-spacing: .03em;
   letter-spacing: -.03em;
@@ -87,7 +87,7 @@ ul {
     align-items: center;
   }
   .slick-slide {
-
+    margin: 0 20px;
     transition: .5s ease-in-out;
     // transition-timing-function: cubic-bezier(1, .5, 0.0, 1);
     transition-timing-function: cubic-bezier(1, .1, .5, 1);
@@ -98,6 +98,13 @@ ul {
       opacity: 1;
     }
   }
+  .slick-list {
+    margin: 0 -20px;
+  }
+  .slick-prev, 
+  .slick-next {
+    display: none !important;
+  } 
 }
 // =====================
 .team__slider {
@@ -143,4 +150,12 @@ ul {
 .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
   // background: grey;
   margin-bottom: 20px;
+}
+.container {
+  overflow: hidden;
+}
+@media(max-width: 575px) {
+  .section__title {
+    font-size: 48px;
+  }
 }

@@ -54,6 +54,9 @@
       line-height: 32px;
       overflow: hidden;
       display: -webkit-box;
+      .break__line {
+        line-height: 100px;
+      }
       &.show {
         display: block;
         overflow: hidden;
@@ -75,5 +78,20 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; 
     white-space: pre-wrap;
+  }
+}
+@media(max-width: 575px) {
+  .service__card {
+    .service__img {
+      padding: 10px;
+      column-gap: 14px;
+      .service__label {
+        font-size: 22px;
+      }
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
   }
 }

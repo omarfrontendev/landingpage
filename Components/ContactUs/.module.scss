@@ -118,3 +118,24 @@
     }
   }
 }
+@media(max-width: 991px){
+  .contact__us__content {
+    flex-direction: column;
+    .left__col {
+      display: none;
+    }
+  }
+}
+@media(max-width: 575px) {
+  .contact__us__content {
+    .contact__form__container {
+      .form {
+        .inputs__group {
+          display: flex;
+          flex-direction: column;
+          row-gap: 24px;
+        }
+      }
+    }
+  }
+}

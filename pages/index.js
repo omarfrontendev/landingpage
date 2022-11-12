@@ -1,6 +1,6 @@
 import React from 'react'
 import { 
-  BookSection, 
+  AboutUs,
   ContactUs, 
   Header, 
   Hero, 
@@ -9,7 +9,8 @@ import {
   ServicesSection, 
   Team, 
   Testimonials, 
-  VirtualAssistant 
+  VirtualAssistant,
+  Footer  
 } from '../Components'
 
 const Home = () => {
@@ -19,13 +20,14 @@ const Home = () => {
       <Hero />
       <VirtualAssistant />
       <OurWord />
-      <Testimonials />
+      <AboutUs />
       <ServicesSection />
-      <MasterSection />
+      <Testimonials />
       <Team />
+      <MasterSection />
       {/* <BookSection /> */}
       <ContactUs />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

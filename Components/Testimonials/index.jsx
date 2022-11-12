@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from "react-slick";
 import ReviewCard from '../ReviewCard';
 import styles from './.module.scss'
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Testimonials = () => {
+
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
 
   const reviews = [
     {
@@ -47,7 +53,7 @@ const Testimonials = () => {
   return (
     <section className={`${styles.section} section__spaces`}>
       <div className={styles.over__lay}></div>
-      <div className={`${styles.slider__conatiner} container`}>
+      <div data-aos='fade-up' className={`${styles.slider__conatiner} container`}>
         <h2 className='section__title'><span>Testimonials</span></h2>
         <Slider {...settings}>
           {reviews.map(review => (

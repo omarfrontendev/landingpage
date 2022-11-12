@@ -9,3 +9,4 @@ export { default as Team } from './Team';
 export { default as ServicesSection } from './ServicesSection';
 export { default as BookSection } from './BookSection';
 export { default as ContactUs } from './ContactUs';
+export { default as AboutUs } from './AboutUs';

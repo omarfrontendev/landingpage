@@ -9,6 +9,7 @@
   position: relative;
   border-top: 3px solid $main__red;
   border-bottom: 3px solid $main__red;
+  background-position: center;
   &::after {
     content: '';
     position: absolute;
@@ -42,6 +43,15 @@
       font-weight: $ft__W__M;
       .icon {
         color: $main__red;
+      }
+    }
+  }
+}
+@media(max-width: 991px) {
+  .section {
+    .section__content {
+      .ph {
+        font-size: 36px;
       }
     }
   }

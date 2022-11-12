@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  padding: 40px 0 0;
+  border-top: 3px solid $main__red;
+
+  .footer__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color__white;
+    column-gap: 10px;
+    font-size: $ft__20;
+    width: fit-content;
+    margin: 0 auto;
+
+    &:first-child {
+      margin-bottom: 20px;
+
+      a {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        transition: $transition;
+
+        &:hover {
+          color: $main__red;
+        }
+      }
+    }
+  }
+  .socials {
+    padding: 20px 0;
+    overflow: hidden;
+    column-gap: 20px;
+    .social__btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid $main__red;
+      border-radius: 50%;
+      color: $main__red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition;
+      font-size: $ft__20;
+      &:hover {
+        transform: scale(1.1);
+        color: $color__white;
+        background-color: $main__red;
+      }
+    }
+  }
+  .copyright {
+    color: $color__white;
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.616);
+  }
+}

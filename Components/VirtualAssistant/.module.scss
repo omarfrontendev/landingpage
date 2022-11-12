@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .assistant__section {
+  margin-bottom: 0;
   .assistant__content {
     flex-direction: row-reverse;
     column-gap: 35px;
@@ -79,5 +80,31 @@
   }
   100% {
     background-position: 800px;
+  }
+}
+@media(max-width: 991px) {
+  .assistant__section {
+    .assistant__content {
+      flex-direction: column-reverse;
+      row-gap: 28px;
+      .assistant__img {
+        width: 100%;
+      }
+      .assistant__desc {
+        font-size: 24px;
+        line-height: 42px;
+      }
+    }
+  }
+}
+@media(max-width: 991px) {
+  .assistant__section {
+    .assistant__content {
+      .assistant__desc {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: $ft__W__M;
+      }
+    }
   }
 }

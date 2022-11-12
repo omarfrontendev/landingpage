@@ -6,20 +6,30 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const ContactUs = () => {
 
-  const [data, setData] = useState({service: 'Admin/Virtual Assistance'});
-  console.log(data)
+  const [data, setData] = useState({
+    service: 'Admin/Virtual Assistance', 
+    message__body: '',
+    message__title: ''
+  });
+  const [inputBlur, setInputBlur] = useState(false)
+  const enteredValueIsValid = data?.message__body?.length > 0;
+  const errorInput = !enteredValueIsValid && inputBlur;
 
   const resources = [
     {
       id: 'name',
       placeholder: 'Name',
       type: 'text',
-      required: true
+      checkTheValue: value => value?.length > 0,
+      error: "This filed can't be empty!",
+      required: true,
     },
     {
       id: 'email',
       placeholder: 'Email',
       type: 'email',
+      checkTheValue: value => value?.includes('@'),
+      error: "Email must includes '@'!",
       required: true
     }
   ];
@@ -45,12 +55,19 @@ const ContactUs = () => {
       id: 'other',
       placeholder: 'Other',
       type: 'text',
-      required: false
+      required: false,
+      checkTheValue: value => value?.length > 0,
+      error: "This filed can't be empty!",
     },
-  ]
+  ];
+
+  let formValidation = false;
+  if(data?.name !== '' && data?.email?.includes('@') &&  data.message__body !== '' && data.message__title !== '') {
+    formValidation = true;
+  }
 
   return (
-    <section className='section__spaces container'>
+    <section id='contact__us' className='section__spaces container'>
       <h2 className='section__title'><span>Contact Us</span></h2>
       <div className={`${styles.contact__us__content} d-flex`}>
         <div className={styles.left__col}>
@@ -71,6 +88,8 @@ const ContactUs = () => {
                   type={input.type}
                   setData={setData}
                   data={data}
+                  checkTheValue={input.checkTheValue}
+                  error={input.error}
                   // options={input.options}
                 />
               ))}
@@ -105,7 +124,6 @@ const ContactUs = () => {
                       // ========
                       className={styles.input}
                     />
-                    <p className={styles.error__message}>this filed Cant be empty</p>
                   </div>
                 )}
               </AnimatePresence>
@@ -119,18 +137,29 @@ const ContactUs = () => {
                 type='text'
                 setData={setData}
                 data={data}
+                checkTheValue={value => value?.length > 0}
+                error={"This filed can't be empty!"}
               />
               <div className={styles.select__box__container}>
                 <textarea 
-                  name="meassage__body" 
+                  name="message__body" 
                   className={styles.textarea}
-                  id="meassage__body" 
+                  id="message__body" 
                   placeholder='Message Body'
+                  onChange={(e) => setData({
+                    ...data,
+                    message__body: e.target.value
+                  })}
+                  onBlur={() => {
+                    setInputBlur(true)
+                  }}
+
                 />
-                <p className={styles.error__message}>this filed Cant be empty</p>
+                {/* <p className={styles.error__message}>this filed Cant be empty</p> */}
+                {errorInput && <p className={styles.error__message}>{"This filed can't be empty!"}</p>}
               </div>
             </div>
-            <button type='submit' disabled className={styles.submit__btn}>Send</button>
+            <button type='submit' disabled={!formValidation} className={styles.submit__btn}>Send</button>
           </form>
         </div>
       </div>

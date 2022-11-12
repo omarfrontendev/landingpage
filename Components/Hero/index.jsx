@@ -1,13 +1,16 @@
-import React from 'react'
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect } from 'react'
 import Slider from "react-slick";
 import styles from './.module.scss'
-import Link from 'next/link';
-
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
 const Hero = () => {
-
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
   const settings = {
     dots: true,
     fade: true,
@@ -48,8 +51,10 @@ const Hero = () => {
       </Slider>
       <div className={`${styles.hero__content} position-absolute`}>
         <div className="container d-flex flex-column align-items-center justify-content-center">
-            <h1 className={`text-center ${styles.main__heading}`}>FOCUS ON WHAT REALLY MATTERS,<br/>LEAVE THE REST TO US.</h1>
-            <Link className={styles.link__tell__how} href='/'>Tell Me How</Link>
+            <h1 data-aos="fade-up" data-aos-duration="1300" data-aos-delay='300' className={`text-center ${styles.main__heading}`}>FOCUS ON WHAT REALLY MATTERS,<br/>LEAVE THE REST TO US.</h1>
+            <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay='500'>
+              <a href='#contact__us' className={styles.link__tell__how}>Tell Me How</a>
+            </div>
         </div>
       </div>
     </section>

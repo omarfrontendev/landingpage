@@ -24,3 +24,11 @@
 .cards__container {
   margin-top: 80px;
 }
+@media(max-width: 991px) {
+  
+  .our__word__video {
+    &::after {
+      display: none;
+    }
+  }
+}

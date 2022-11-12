@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './.module.scss'
 
-const Input = ({ id, placeholder, required, type, data, setData, options }) => {
+const Input = ({ id, placeholder, required, checkTheValue, error, type, data, setData, options }) => {
+
+  const [inputBlur, setInputBlur] = useState(false)
+  const enteredValueIsValid = checkTheValue && checkTheValue(data[id]);
+  const errorInput = !enteredValueIsValid && inputBlur;
+
 
   if(type === 'select__box') {
     return (
@@ -37,10 +42,14 @@ const Input = ({ id, placeholder, required, type, data, setData, options }) => {
           ...data,
           [id]: e.target.value
         })}
+        onBlur={() => {
+          setInputBlur(true)
+        }}
         className={styles.input}
         required={required}
       />
-      <p className={styles.error__message}>this filed Cant be empty</p>
+      {/* <p className={styles.error__message}>this filed Can't be empty</p> */}
+      {error && errorInput && <p className={styles.error__message}>{error}</p>}
     </div>
   )
 }
