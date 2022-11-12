@@ -6,6 +6,7 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import OurWord from '../OurWord';
 const Testimonials = () => {
 
   useEffect(() => {
@@ -54,18 +55,21 @@ const Testimonials = () => {
   return (
     <section className={`${styles.section} section__spaces`}>
       <div className={styles.over__lay}></div>
-      <div data-aos='fade-up' className={`${styles.slider__conatiner} container`}>
-        <h2 className='section__title'><span>Testimonials</span></h2>
-        <Slider {...settings}>
-          {reviews.map(review => (
-            <ReviewCard 
+      <div className={`${styles.slider__conatiner} container`}>
+        {/* <h2 className='section__title'><span>Testimonials</span></h2> */}
+        <OurWord />
+        <div data-aos='fade-up'>
+          <Slider {...settings}>
+            {reviews.map(review => (
+              <ReviewCard 
               key={review.id}
               name={review.name}
               job={review.job}
               opinion={review.opinion}
-            />
-          ))}
-        </Slider>
+              />
+              ))}
+          </Slider>
+        </div>
       </div>
     </section>
   )

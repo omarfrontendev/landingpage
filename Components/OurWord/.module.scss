@@ -1,8 +1,11 @@
 @import '../../styles/variables.scss';
 
 .our__word__video {
-  height: 80vh;
+  max-height: 80vh;
   position: relative;
+  margin-bottom: 40px;
+  overflow: hidden;
+  border-radius: 4px;
   &::after {
     content: '';
     position: absolute;
