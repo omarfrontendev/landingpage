@@ -75,7 +75,6 @@ const Pagination = () => {
       if(ctx.contactOffset < window.pageYOffset + 150) {
         setCurrentPagination(7)
       }
-      console.log(ctx.contactOffset)
     };
 
     window.addEventListener('scroll', activePaginationHandler);
