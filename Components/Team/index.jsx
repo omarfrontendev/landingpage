@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import styles from './.module.scss'
 import Slider from "react-slick";
+import AppContext from '../../store/app-context';
 import TeamCard from '../TeamCard';
 import Aos from 'aos';
 import "aos/dist/aos.css";
@@ -11,6 +12,13 @@ const Team = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])
+
+  const ctx = useContext(AppContext);
+  const teamSection = useRef(null)
+  useEffect(() => {
+    ctx.setTeamOffset(teamSection.current.offsetTop);
+  }, [ctx]);
+
 
   const team = [
     {
@@ -100,7 +108,7 @@ const Team = () => {
   };
 
   return (
-    <section id='our__team' className={`${styles.section} section__spaces`}>
+    <section id='our__team' ref={teamSection} className={`${styles.section} section__spaces`}>
       <div className="container">
         <h2 data-aos='fade-up' className='section__title'><span>MEET THE TEAM</span></h2>
       </div>

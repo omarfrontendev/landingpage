@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Input from '../Input'
 import styles from './.module.scss'
 import { motion, AnimatePresence } from 'framer-motion'
+import AppContext from '../../store/app-context'
 
 const ContactUs = () => {
+  
+
+  const ctx = useContext(AppContext);
+  const contactSection = useRef(null)
+  useEffect(() => {
+    ctx.setContactOffset(contactSection.current.offsetTop)
+  }, [ctx]);
 
   const [data, setData] = useState({
     service: 'Admin/Virtual Assistance', 
@@ -67,7 +75,7 @@ const ContactUs = () => {
   }
 
   return (
-    <section id='contact__us' className='section__spaces container'>
+    <section id='contact__us' ref={contactSection} className='section__spaces container'>
       <h2 className='section__title'><span>Contact Us</span></h2>
       <div className={`${styles.contact__us__content} d-flex`}>
         <div className={styles.left__col}>

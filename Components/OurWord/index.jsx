@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 
 const OurWord = () => {
 
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])

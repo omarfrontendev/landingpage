@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import Masonry from 'react-masonry-css'
 import ServiceCard from '../ServiceCard'
 import styles from './.module.scss'
+import AppContext from '../../store/app-context';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 
@@ -10,6 +11,14 @@ const ServicesSection = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])
+
+  const ctx = useContext(AppContext);
+  const servicesSection = useRef(null)
+  useEffect(() => {
+    ctx.setserviceOffset(servicesSection.current.offsetTop)  
+  }, [ctx]);
+
+
 
    const services = [
     {
@@ -74,7 +83,7 @@ const ServicesSection = () => {
   }
 
   return (
-    <section id='services' className='section__spaces container'>
+    <section id='services' ref={servicesSection} className='section__spaces container'>
       <h2 data-aos='fade-up' className='section__title'><span>Our Services</span></h2>
       <div className={styles.cards__container}>
         <Masonry

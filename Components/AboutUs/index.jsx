@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import styles from './.module.scss'
+import AppContext from '../../store/app-context';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 
@@ -8,6 +9,12 @@ const AboutUs = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])
+
+  const ctx = useContext(AppContext);
+  const aboutSection = useRef(null)
+  useEffect(() => {
+    ctx.setAboutOffset(aboutSection.current.offsetTop)
+  }, [ctx]);
 
   const data = [
     {
@@ -43,7 +50,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section className={`${styles.section}`}>
+    <section ref={aboutSection} className={`${styles.section}`}>
       <div className={`${styles.content} container position-relative`}>
         <h2 data-aos="fade-up" id='about__us' className='section__title'><span>About Us</span></h2>
         <div className={styles.about__boxes}>

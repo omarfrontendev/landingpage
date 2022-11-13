@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+.pagination__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 10000;
+  .single__pagination {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid $main__red;
+    position: relative;
+    transition: $transition;
+    background-color: #f4433686;
+    &.active {
+      animation: blur .3s linear;
+      background-color: $color__white;
+    }
+    .label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(100% + 10px);
+      color: $color__white;
+      white-space: pre;
+      background-color: $main__red;
+      padding: 4px 6px;
+      border-radius: 2px;
+      font-size: 12px;
+      display: none;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -14px;
+        transform: translateY(-50%);
+        border: 7px solid transparent;
+        border-left-color: $main__red;
+        display: none;
+      }
+    }
+    &:hover {
+      &:not(.active) {
+        background-color: $main__red;
+      }
+      .label {
+        display: block;
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+}
+@keyframes blur {
+  to {
+    filter: blur(2px)
+  }
+}

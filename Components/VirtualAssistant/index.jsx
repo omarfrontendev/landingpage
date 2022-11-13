@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import styles from './.module.scss'
 import Aos from 'aos';
 import "aos/dist/aos.css";
+import AppContext from '../../store/app-context';
 
 const VirtualAssistant = () => {
 
@@ -10,8 +11,16 @@ const VirtualAssistant = () => {
     Aos.init({ duration: 1000 });
   }, [])
 
+  const ctx = useContext(AppContext);
+  const virtualSection = useRef(null);
+
+  useEffect(() => {
+    ctx.setVirtualOffset(virtualSection.current.offsetTop);
+  }, [ctx])
+
+
   return (
-    <div className="container">
+    <div className="container" ref={virtualSection} id='virtual__assistance'>
       <section className={`${styles.assistant__section} section__spaces`}>
         <h2 data-aos="fade-up" className='section__title'><span>Virtual Assistance Services</span></h2>
         <div className={`${styles.assistant__content} d-flex align-items-center justigy-content-center`}>

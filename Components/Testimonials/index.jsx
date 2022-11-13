@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import Slider from "react-slick";
 import ReviewCard from '../ReviewCard';
 import styles from './.module.scss'
 import Aos from 'aos';
+import OurWord from '../OurWord';
+import AppContext from '../../store/app-context';
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import OurWord from '../OurWord';
 const Testimonials = () => {
+
+  const ctx = useContext(AppContext);
+  const testimonialsSection = useRef(null);
+
+  useEffect(() => {
+    ctx.setTestimonialsOffset(testimonialsSection.current.offsetTop)
+  }, [ctx]);
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, [])
+
 
   const reviews = [
     {
@@ -53,7 +62,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className={`${styles.section} section__spaces`}>
+    <section ref={testimonialsSection} id='testimonials' className={`${styles.section} section__spaces`}>
       <div className={styles.over__lay}></div>
       <div className={`${styles.slider__conatiner} container`}>
         {/* <h2 className='section__title'><span>Testimonials</span></h2> */}

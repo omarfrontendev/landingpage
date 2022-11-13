@@ -10,12 +10,14 @@ import {
   Team, 
   Testimonials, 
   VirtualAssistant,
-  Footer  
+  Footer,  
+  Pagination
 } from '../Components'
+import AppProvider from '../store/AppProvider'
 
 const Home = () => {
   return (
-    <>
+    <AppProvider>
       <Header />
       <Hero />
       <VirtualAssistant />
@@ -28,7 +30,8 @@ const Home = () => {
       <AboutUs />
       <ContactUs />
       <Footer />
-    </>
+      <Pagination />
+    </AppProvider>
   )
 }
 

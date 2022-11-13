@@ -155,6 +155,26 @@ ul {
 .container {
   overflow: hidden;
 }
+// change scroll bar :=
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f44336c2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $main__red;
+}
+// ==========
 @media(max-width: 575px) {
   .section__title {
     font-size: 46px;
