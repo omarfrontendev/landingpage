@@ -126,8 +126,13 @@
       min-height: auto;
       max-height: 100vh;
       .main__heading {
-        font-size: 30px;
-        
+        font-size: 28px;
+      }
+      .link__tell__how {
+        width: 200px;
+        max-width: 100%;
+        height: 60px;
+        font-size: $ft__18;
       }
     }
   }

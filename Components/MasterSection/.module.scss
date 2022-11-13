@@ -56,3 +56,17 @@
     }
   }
 }
+@media(max-width: 575px) {
+  .section {
+    padding: 100px 0;
+    .section__content {
+      .ph {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+      .auther {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import AppContext from '../../store/app-context';
 import styles from './.module.scss'
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Pagination = () => {
 
@@ -46,6 +48,10 @@ const Pagination = () => {
   ];
 
   useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, [])
+
+  useEffect(() => {
 
     const activePaginationHandler = () => {
       if(window.pageYOffset < ctx.virtualOffset) {
@@ -80,8 +86,8 @@ const Pagination = () => {
   
   return (
     <ul className={styles.pagination__container}>
-      {sections.map(section=> (
-        <li key={section.id}>
+      {sections.map((section, i) => (
+        <li data-aos='fade-left' data-aos-delay={`${i}00`}  key={section.id}>
           <a className={`${styles.single__pagination} ${currentPagination === section.id ? styles.active : ''}`} href={section.href}>
             <span className={styles.label}>{section.label}</span>
           </a>
