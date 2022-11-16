@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.button {
+  all: unset;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-150%, -50%);
+  z-index: 100;
+  // background-color: $color__white;
+  border-radius: 50%;
+  &.next_btn {
+    left: auto;
+    right: 0;
+    transform: translate(150%, -50%);
+  }
+  .icon {
+    font-size: 30px;
+    color: $main__red;
+  }
+}
+@media(max-width: 1300px) {
+  .button {
+    display: none;
+  }
+}

@@ -50,7 +50,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <section ref={aboutSection} className={`${styles.section}`}>
+    <section ref={aboutSection} className={`${styles.section} about-us-section`}>
       <div className={`${styles.content} container position-relative`}>
         <h2 data-aos="fade-up" id='about__us' className='section__title'><span>About Us</span></h2>
         <div className={styles.about__boxes}>

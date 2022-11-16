@@ -1,11 +1,11 @@
 import React from 'react'
+import { ToastContainer } from 'react-toastify';
 import { 
   AboutUs,
   ContactUs, 
   Header, 
   Hero, 
   MasterSection, 
-  OurWord, 
   ServicesSection, 
   Team, 
   Testimonials, 
@@ -14,6 +14,7 @@ import {
   Pagination
 } from '../Components'
 import AppProvider from '../store/AppProvider'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   return (
@@ -21,7 +22,6 @@ const Home = () => {
       <Header />
       <Hero />
       <VirtualAssistant />
-      {/* <OurWord /> */}
       <ServicesSection />
       <Testimonials />
       <Team />
@@ -31,6 +31,7 @@ const Home = () => {
       <ContactUs />
       <Footer />
       <Pagination />
+      <ToastContainer  />
     </AppProvider>
   )
 }

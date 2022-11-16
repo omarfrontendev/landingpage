@@ -14,12 +14,9 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className='container'>
-        <div data-aos="fade-up" className={styles.footer__row}>
-          <a className='email' href="mailto:malek@leagueofva.com"><HiOutlineMail />malek@leagueofva.com</a>
-        </div>
         <div data-aos="fade-up" data-aos-delay='150' className={styles.footer__row}>
           <HiLocationMarker />
-          <p className='location'>Hurghada, Egypt</p>
+          <p className='location'>30 N Gould, Sheridan, WY 82801</p>
         </div>  
         <div className={`${styles.socials} d-flex align-items-center justify-content-center`}>
           <div data-aos='fade-up' data-aos-delay='100'>

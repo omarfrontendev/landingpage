@@ -5,13 +5,18 @@ import styles from './.module.scss'
 import Aos from 'aos';
 import OurWord from '../OurWord';
 import AppContext from '../../store/app-context';
+import PrevButton from '../SliderArrows/PrevButton';
+import NextButton from '../SliderArrows/NextButton';
+
 import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 const Testimonials = () => {
 
   const ctx = useContext(AppContext);
   const testimonialsSection = useRef(null);
+  const sliderRef = useRef(null)
 
   useEffect(() => {
     ctx.setTestimonialsOffset(testimonialsSection.current.offsetTop)
@@ -50,14 +55,15 @@ const Testimonials = () => {
   ];
 
   const settings = {
-    dots: false,
-    infinite: false,
+    dots: true,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 800,
-    autoplaySpeed: 4500,
-    // cssEase: "cubic-bezier(1, .1, .5, 1)",
+    autoplaySpeed: 2000,
+    prevArrow: <PrevButton slider={sliderRef}/>,
+    nextArrow: <NextButton slider={sliderRef}/>,
     className: 'feedback__slider'
   };
 
@@ -68,14 +74,14 @@ const Testimonials = () => {
         {/* <h2 className='section__title'><span>Testimonials</span></h2> */}
         <OurWord />
         <div data-aos='fade-up'>
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {reviews.map(review => (
-              <ReviewCard 
-              key={review.id}
-              name={review.name}
-              job={review.job}
-              opinion={review.opinion}
-              />
+                <ReviewCard 
+                  key={review.id}
+                  name={review.name}
+                  job={review.job}
+                  opinion={review.opinion}
+                />
               ))}
           </Slider>
         </div>

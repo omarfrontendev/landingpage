@@ -1,19 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useRef, useState } from 'react'
+import emailjs from 'emailjs-com';
 import Input from '../Input'
 import styles from './.module.scss'
 import { motion, AnimatePresence } from 'framer-motion'
 import AppContext from '../../store/app-context'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
   
-
+  const form = useRef();
   const ctx = useContext(AppContext);
-  const contactSection = useRef(null)
+  const contactSection = useRef(null);
   useEffect(() => {
     ctx.setContactOffset(contactSection.current.offsetTop)
   }, [ctx]);
-
   const [data, setData] = useState({
     service: 'Admin/Virtual Assistance', 
     message__body: '',
@@ -60,7 +62,7 @@ const ContactUs = () => {
       required: true
     },
     {
-      id: 'other',
+      id: 'other__services',
       placeholder: 'Other',
       type: 'text',
       required: false,
@@ -72,7 +74,27 @@ const ContactUs = () => {
   let formValidation = false;
   if(data?.name !== '' && data?.email?.includes('@') &&  data.message__body !== '' && data.message__title !== '') {
     formValidation = true;
-  }
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_h63f6wv', 'template_wai1k3i', form.current, 'nU4oy23aRmqubMFMX')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      toast.success(`Thank you ${data.name}, we have received your message and we will get back to you as soon as possible`, {
+        position: toast.POSITION.TOP_RIGHT
+      });
+      e.target.reset();
+      setData({
+        service: 'Admin/Virtual Assistance', 
+        message__body: '',
+        message__title: ''
+      });
+  };
 
   return (
     <section id='contact__us' ref={contactSection} className='section__spaces container'>
@@ -84,7 +106,7 @@ const ContactUs = () => {
           </div>
         </div>
         <div className={styles.contact__form__container}>
-          <form className={styles.form}>
+          <form ref={form} onSubmit={sendEmail} className={styles.form}>
           <div className={styles.label}>Your Info:</div>
             <div className={styles.inputs__group}>
               {resources.map(input => (
@@ -121,6 +143,7 @@ const ContactUs = () => {
                       initial={{height: '0px'}}
                       transition={{type: 'linear'}}
                       id={services[1].id}
+                      name={services[1].id}
                       placeholder={services[1].placeholder}
                       required={services[1].required}
                       type={services[1].type}
@@ -163,7 +186,6 @@ const ContactUs = () => {
                   }}
 
                 />
-                {/* <p className={styles.error__message}>this filed Cant be empty</p> */}
                 {errorInput && <p className={styles.error__message}>{"This filed can't be empty!"}</p>}
               </div>
             </div>

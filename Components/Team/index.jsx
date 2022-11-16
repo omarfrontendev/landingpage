@@ -76,7 +76,7 @@ const Team = () => {
   ];
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,

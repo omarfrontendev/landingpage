@@ -20,6 +20,7 @@ const Input = ({ id, placeholder, required, checkTheValue, error, type, data, se
             ...data,
             [id]: e.target.value
           })}
+          name={id}
           >
           {options.map(option => (
             <option key={option} value={option}>
@@ -47,6 +48,7 @@ const Input = ({ id, placeholder, required, checkTheValue, error, type, data, se
         }}
         className={styles.input}
         required={required}
+        name={id}
       />
       {/* <p className={styles.error__message}>this filed Can't be empty</p> */}
       {error && errorInput && <p className={styles.error__message}>{error}</p>}
