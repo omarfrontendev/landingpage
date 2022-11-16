@@ -11,7 +11,8 @@ import {
   Testimonials, 
   VirtualAssistant,
   Footer,  
-  Pagination
+  Pagination,
+  ButtonScrollToTop
 } from '../Components'
 import AppProvider from '../store/AppProvider'
 import 'react-toastify/dist/ReactToastify.css';
@@ -32,6 +33,7 @@ const Home = () => {
         <ContactUs />
         <Footer />
         <Pagination />
+        <ButtonScrollToTop />
         <ToastContainer  />
       </AppProvider>
     </div>
