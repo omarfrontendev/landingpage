@@ -18,21 +18,23 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   return (
-    <AppProvider>
-      <Header />
-      <Hero />
-      <VirtualAssistant />
-      <ServicesSection />
-      <Testimonials />
-      <Team />
-      <MasterSection />
-      {/* <BookSection /> */}
-      <AboutUs />
-      <ContactUs />
-      <Footer />
-      <Pagination />
-      <ToastContainer  />
-    </AppProvider>
+    <div style={{overflow: 'hidden'}}>
+      <AppProvider>
+        <Header />
+        <Hero />
+        <VirtualAssistant />
+        <ServicesSection />
+        <Testimonials />
+        <Team />
+        <MasterSection />
+        {/* <BookSection /> */}
+        <AboutUs />
+        <ContactUs />
+        <Footer />
+        <Pagination />
+        <ToastContainer  />
+      </AppProvider>
+    </div>
   )
 }
 
